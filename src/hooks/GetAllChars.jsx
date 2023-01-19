@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { allCharactersService } from '../services/characters.services'
 
 export let GetAllChars = () => {
   const navigate = useNavigate()
+  const [offset, setOffset] = useState(0)
   const [allCharacters, setAllCharacters] = useState([])
   const [fetching, isFetching] = useState(true)
-  let offSet = 0; 
-
+  
   useEffect(() => {
-    getAllCharacters()
-  },[])
+    getAllCharacters(offset)
+  },[offset])
 
-  const getAllCharacters = async () => {
+  const getAllCharacters = async (offSet) => {
     try {
+      console.log('Offset en Hook', offSet)
       const responseAllCharacter = await allCharactersService(offSet)
-      console.log('offset', offSet);
       setAllCharacters(responseAllCharacter.data.data.results)
       isFetching(false)
     } catch (error) {
@@ -26,8 +26,10 @@ export let GetAllChars = () => {
   return {
     fetching,
     allCharacters,
-    offSet,
+    offset,
+    setOffset,
     getAllCharacters
-  }
+    }
+  
 }
 
