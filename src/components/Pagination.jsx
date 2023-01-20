@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Pagination({setOffset,offset,currentPage, setCurrentPage}) {
+
+  
+  
   
   const handleNextClick = () => {
-    setOffset(offset + 20);
+    //setOffset(offset + 20);
     setCurrentPage(currentPage + 1);
   }
   const handlePrevClick = () => {

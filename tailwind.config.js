@@ -6,6 +6,9 @@ module.exports = {
   darkMode:'class',
   theme: {
     extend: {
+      backgroundImage: {
+        'homebg' : "https://res.cloudinary.com/djersm2h6/image/upload/v1674206848/marvelproject/marvelheroes_iw8jlp.jpg",
+      },
       colors:{
         'genoa': {
           DEFAULT: '#166064',

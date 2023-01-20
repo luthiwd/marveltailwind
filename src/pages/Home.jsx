@@ -3,7 +3,7 @@ import React from 'react'
 
 function Home() {
   return (
-    <div className='grid place-content-center bg-slate-400 pt-15'>
+    <div className='bg-homebg pt-50'>
       <h1> Home </h1>
     </div>
   )

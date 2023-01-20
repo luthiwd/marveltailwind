@@ -14,15 +14,13 @@ import Error from "./pages/Error";
 import NotFound from "./pages/NotFound";
 
 function App() {
-  const [offset, setOffset] = useState(0)
-  const [currentPage, setCurrentPage] = useState(1)
-  
+    
   return (
     <div className="App">
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/characters' element={<CharactersPage offset={offset} setOffset={setOffset} currentPage={currentPage} setCurrentPage={setCurrentPage}/>} />
+        <Route path='/characters' element={<CharactersPage />} />
         <Route path='/characters/:id' element={<CharacterDetailsPage />} />
         <Route path="/error" element={<Error />} />
         <Route path="/*" element={<NotFound />} />
